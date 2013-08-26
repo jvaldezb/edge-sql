@@ -43,8 +43,8 @@ public class EdgeCompiler
         if (parameters != null)
         {
             foreach (KeyValuePair<string, object> parameter in parameters)
-            {
-                command.Parameters.AddWithValue(parameter.Key, parameter.Value);
+            {                
+                command.Parameters.AddWithValue(parameter.Key, parameter.Value == null ? DBNull.Value : parameter.Value);
             }
         }
     }
